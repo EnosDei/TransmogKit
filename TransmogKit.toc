@@ -2,6 +2,7 @@
 ## Title: TransmogKit
 ## Notes: Map mounts and hearthstones to your transmog looks. Auto-updates one mount macro and one hearth macro per character.
 ## Author: EnosDei
+## X-Curse-Project-ID: 1739985
 ## IconTexture: Interface\AddOns\TransmogKit\icon.tga
 ## Version: 0.21.5
 ## SavedVariables: TransmogKitAccountDB
