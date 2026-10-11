@@ -1,0 +1,6 @@
+package-as: TransmogKit
+
+ignore:
+  - README.md
+  - .github
+  - .gitignore

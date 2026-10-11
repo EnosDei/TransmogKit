@@ -1,0 +1,11 @@
+## Interface: 120000, 120001, 120005, 120007
+## Title: TransmogKit
+## Notes: Map mounts and hearthstones to your transmog looks. Auto-updates one mount macro and one hearth macro per character.
+## Author: EnosDei
+## IconTexture: Interface\AddOns\TransmogKit\icon.tga
+## Version: 0.21.5
+## SavedVariables: TransmogKitAccountDB
+## SavedVariablesPerCharacter: TransmogKitDB
+
+TransmogKit_Colors.lua
+TransmogKit.lua
