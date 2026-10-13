@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.21.6
+- Updated for patch 12.1.5 (Interface 120105).
+
 ## 0.21.5
 - **Transmog shoulders differently**: on the Shoulders tab, a checkbox at the bottom left turns the split on or off (the same setting as Blizzard's checkbox). While it is on, **Right** and **Left** buttons next to it choose which shoulder a click changes; clicking a shoulder slot on the character does the same. Previously every click went to the right shoulder, so the left one could not be changed on its own.
 
