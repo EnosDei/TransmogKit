@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.21.7
+- Fixed shift-click linking to chat on patch 12.1.5 (uses the new chat link functions when the old ones are gone).
+
 ## 0.21.6
 - Updated for patch 12.1.5 (Interface 120105).
 

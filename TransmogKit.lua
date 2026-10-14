@@ -4,6 +4,16 @@ local TK = CreateFrame("Frame")
 local DB
 local MOUNT_MACRO, HEARTH_MACRO = "TMK_Mount", "TMK_Hearth"
 local QMARK = 134400
+
+-- Put a link in the chat box. The old ChatEdit_/ChatFrame_ globals moved to
+-- ChatFrameUtil in newer clients, so use whichever exists.
+local function LinkToChat(link)
+  local U = ChatFrameUtil
+  local insert = (U and U.InsertLink) or ChatEdit_InsertLink
+  local open = (U and U.OpenChat) or ChatFrame_OpenChat
+  if insert and insert(link) then return end
+  if open then open(link) end
+end
 local pendingMacro = false
 
 
@@ -923,7 +933,7 @@ for r = 1, MAX_ROWS do
     local e = self.entry; if not e then return end
     if IsShiftKeyDown() then
       local link = "|cffff80ff|Htransmogset:"..e.setID.."|h["..e.name.."]|h|r"
-      if not ChatEdit_InsertLink(link) then ChatFrame_OpenChat(link) end
+      LinkToChat(link)
     elseif IsControlKeyDown() or not PushSearch("SetsFrame", _G.WARDROBE_SETS or "Sets", 2, e.name) then
       Preview(SetLinks(e))
     end
@@ -1294,7 +1304,7 @@ local function CellClick(self, btn)
   local info = e.info or SourceFor(e.visualID); e.info = info
   local link = info and info.itemID and select(2, C_Item.GetItemInfo(info.itemID))
   if IsShiftKeyDown() and link then
-    if not ChatEdit_InsertLink(link) then ChatFrame_OpenChat(link) end
+    LinkToChat(link)
   elseif IsControlKeyDown() and link then
     Preview({link})
   else

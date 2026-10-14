@@ -4,7 +4,7 @@
 ## Author: EnosDei
 ## X-Curse-Project-ID: 1739985
 ## IconTexture: Interface\AddOns\TransmogKit\icon.tga
-## Version: 0.21.6
+## Version: 0.21.7
 ## SavedVariables: TransmogKitAccountDB
 ## SavedVariablesPerCharacter: TransmogKitDB
 
