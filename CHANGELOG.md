@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.21.8
+- Fixed Items tab ordering: armor and weapons are now sorted newest to oldest by the game's own release order (the same order as Blizzard's appearance list). Some items were being placed among very old appearances, or pushed to the top, because of guessed expansion tags.
+
 ## 0.21.7
 - Fixed shift-click linking to chat on patch 12.1.5 (uses the new chat link functions when the old ones are gone).
 

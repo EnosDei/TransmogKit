@@ -1504,7 +1504,7 @@ function iv.Refresh()
       end
       if ok then
         local isNew = C_TransmogCollection.IsNewAppearance and C_TransmogCollection.IsNewAppearance(a.visualID) or false
-        iv.data[#iv.data+1] = {visualID = a.visualID, collected = a.isCollected, fav = a.isFavorite, new = isNew and true or false, hide = a.isHideVisual and true or false, score = score, pct = pct, exp = cd and cd.exp or 99, order = #iv.data}
+        iv.data[#iv.data+1] = {visualID = a.visualID, collected = a.isCollected, fav = a.isFavorite, new = isNew and true or false, hide = a.isHideVisual and true or false, score = score, pct = pct, ui = a.uiOrder or 0, order = #iv.data}
       end
     end
   end
@@ -1513,7 +1513,8 @@ function iv.Refresh()
     if (x.hide and 1 or 0) ~= (y.hide and 1 or 0) then return x.hide and true or false end
     if (x.fav and 1 or 0) ~= (y.fav and 1 or 0) then return x.fav and true or false end
     if (x.new and 1 or 0) ~= (y.new and 1 or 0) then return x.new and true or false end
-    if x.exp ~= y.exp then return x.exp > y.exp end return x.visualID > y.visualID end) end
+    -- same order as the Blizzard wardrobe: uiOrder runs newest to oldest by actual release
+    if x.ui ~= y.ui then return x.ui > y.ui end return x.visualID > y.visualID end) end
   countT:SetText(#iv.data..(qInfo and " matches" or " appearances")..(unresolved > 0 and ("  |cff888888(loading "..unresolved.." names...)|r") or ""))
   iv.Render()
   if UI.RefreshSheath then UI.RefreshSheath() end
